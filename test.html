@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="container">
+        <div class="button-group filter-button-group">
+            <a data-filter="*">show all</a>
+            <a data-filter=".metal">metal</a>
+            <a data-filter=".transition">transition</a>
+        </div>
+        <div class="grid">
+            <div class="element-item transition metal">1</div>
+            <div class="element-item metal">2</div>
+            <div class="element-item metal">3</div>
+            <div class="element-item transition">4</div>
+        </div>
+    </section>
+
+
+    <script src="https://npmcdn.com/isotope-layout@3.0.6/dist/isotope.pkgd.js"></script>
+
+    <script>
+        // init Isotope
+        let iso = new Isotope(".grid", {
+            itemSelector: ".element-item",
+            layoutMode: "fitRows"
+        });
+
+        // bind filter button click
+        let filtersElem = document.querySelector(".filter-button-group");
+        filtersElem.addEventListener("click", function (event) {
+            // only work with buttons
+            if (!matchesSelector(event.target, "a")) {
+                return;
+            }
+            let filterValue = event.target.getAttribute("data-filter");
+            // use matching filter function
+            iso.arrange({ filter: filterValue });
+        });
+
+    </script>
+
+</body>
+
+</html>

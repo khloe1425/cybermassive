@@ -45,7 +45,7 @@ header {
                 border-top: 1px solid $clr-nav-bdr-mob-1;
                 @include textStyle1($fs-nav, $fw-def, $clr-nav-txt-mob);
                 text-transform: uppercase;
-                letter-spacing: $ls-0 / 2;
+                letter-spacing: calc($ls-0 / 2);
                 padding: 0 0 0 $p-7;
                 i {
                     font-size: $fs-show-categ;

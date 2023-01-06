@@ -603,6 +603,7 @@ header .massiveNavbar .navbar-collapse .nav-divider {
   letter-spacing: 3px;
   padding: 0;
   margin: 0 15px;
+  cursor: pointer;
 }
 .showcase .showcase__filter .filter-nav .nav-item .nav-link.active, .showcase .showcase__filter .filter-nav .nav-item .nav-link:hover {
   color: #222;
