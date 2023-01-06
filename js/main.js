@@ -18,6 +18,9 @@ $(".massiveNav .nav-link").on("click", function () {
   $(this).addClass("active");
 });
 
+
+
+
 // COUNTUP
 $(".numbers__counter").countUp();
 
@@ -83,6 +86,11 @@ filtersElem.addEventListener("click", function (event) {
   let filterValue = event.target.getAttribute("data-filter");
   // use matching filter function
   iso.arrange({ filter: filterValue });
+});
+
+$(".massiveShowcase .nav-link").on("click", function () {
+  $(".massiveShowcase").find(".active").removeClass("active");
+  $(this).addClass("active");
 });
 
 // MAGNIFIC POPUP
